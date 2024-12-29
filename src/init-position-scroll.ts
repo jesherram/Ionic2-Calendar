@@ -25,7 +25,8 @@ import {
             overflow-x: hidden;
         }        
     `],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class initPositionScrollComponent implements OnChanges, AfterViewInit, OnDestroy {
     @Input() initPosition!:number;

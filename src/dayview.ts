@@ -41,7 +41,8 @@ import { CalendarService } from './calendar.service';
     selector: 'dayview',
     templateUrl: './dayview.html',
     styleUrls: ['./dayview.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class DayViewComponent implements ICalendarComponent, OnInit, OnChanges, OnDestroy, AfterViewInit {
     constructor(private calendarService: CalendarService, private elm: ElementRef, private zone: NgZone) {}

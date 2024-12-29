@@ -42,7 +42,8 @@ import {CalendarService} from './calendar.service';
     selector: 'weekview',
     templateUrl: './weekview.html',
     styleUrls: ['./weekview.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class WeekViewComponent implements ICalendarComponent, OnInit, OnChanges, OnDestroy, AfterViewInit {
 

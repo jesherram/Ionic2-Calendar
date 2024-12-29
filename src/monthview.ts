@@ -25,6 +25,7 @@ import {CalendarService} from './calendar.service';
     selector: 'monthview',
     templateUrl: './monthview.html',
     styleUrls: ['./monthview.css'],
+    standalone: false,
 })
 export class MonthViewComponent implements ICalendarComponent, OnInit, OnDestroy, OnChanges, AfterViewInit {
 

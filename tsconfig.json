@@ -1,40 +1,40 @@
 {
-    "compilerOptions": {
-        "paths": {
-            "Ionic2-Calendar": [
-              "dist"
-            ]
-          },
-        "baseUrl": "./",
-        "declarationMap": false,
-        "declaration": true,
-        "inlineSources": true,
-        "types": [],
-          "outDir": "dist",
-          "forceConsistentCasingInFileNames": true,
-          "strict": true,
-          "noImplicitOverride": true,
-          "noPropertyAccessFromIndexSignature": true,
-          "noImplicitReturns": true,
-          "noFallthroughCasesInSwitch": true,
-          "sourceMap": true,
-          "downlevelIteration": true,
-          "experimentalDecorators": true,
-          "moduleResolution": "node",
-          "importHelpers": true,
-          "target": "ES2022",
-          "module": "ES2022",
-          "useDefineForClassFields": false,
-          "lib": [
-            "ES2022",
-            "dom"
-          ]          
-    },
-    "angularCompilerOptions": {
-        "compilationMode": "partial",
-        "enableI18nLegacyMessageIdFormat": false,
-        "strictInjectionParameters": true,
-        "strictInputAccessModifiers": true,
-        "strictTemplates": true    
-    }
+  "compilerOptions": {
+      "paths": {
+          "Ionic2-Calendar": [
+            "dist"
+          ]
+        },
+      "baseUrl": "./",
+      "declarationMap": false,
+      "declaration": true,
+      "esModuleInterop": true,
+      "inlineSources": true,
+      "types": [],
+        "outDir": "dist",
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "noImplicitOverride": true,
+        "noPropertyAccessFromIndexSignature": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "sourceMap": true,
+        "experimentalDecorators": true,
+        "moduleResolution": "node",
+        "importHelpers": true,
+        "target": "ES2022",
+        "module": "ES2022",
+        "useDefineForClassFields": false,
+        "lib": [
+          "ES2022",
+          "dom"
+        ]          
+  },
+  "angularCompilerOptions": {
+      "compilationMode": "partial",
+      "enableI18nLegacyMessageIdFormat": false,
+      "strictInjectionParameters": true,
+      "strictInputAccessModifiers": true,
+      "strictTemplates": true    
+  }
 }

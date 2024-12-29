@@ -1,37 +1,39 @@
 {
     "name": "ionic2-calendar",
-    "version": "2.5.0",
+    "version": "2.6.0",
     "description": "Ionic calendar component",
     "keywords": [
-        "Ionic",
-        "calendar"
+      "Ionic",
+      "calendar"
     ],
     "author": {
-        "name": "twinssbc"
+      "name": "twinssbc"
     },
     "license": "MIT",
     "repository": {
-        "type": "git",
-        "url": "git+https://github.com/twinssbc/Ionic2-Calendar.git"
+      "type": "git",
+      "url": "git+https://github.com/twinssbc/Ionic2-Calendar.git"
     },
     "scripts": {
-        "build": "rm -rf dist && ng build"
+      "build": "rm -rf dist && ng build"
     },
     "dependencies": {
-        "tslib": "^2.3.0"
+      "tslib": "^2.3.0"
     },
     "peerDependencies": {
-        "@angular/common": "^18.0.0",
-        "@angular/core": "^18.0.0",
-        "@ionic/angular": "^8.0.0",
-        "swiper": "^11.0.0"
+      "@angular/common": "^19.0.5",
+      "@angular/forms": "^19.0.5",
+      "@angular/core": "^19.0.5",
+      "@ionic/angular": "^8.4.1",
+      "swiper": "^11.1.12"
     },
     "devDependencies": {
-        "@angular-devkit/build-angular": "^18.0.0",
-        "@angular/cli": "^18.0.0",
-        "@angular/compiler": "^18.0.0",
-        "@angular/compiler-cli": "^18.0.0",
-        "ng-packagr": "^18.0.0",
-        "typescript": "~5.4.5"
+      "@angular-devkit/build-angular": "^19.0.5",
+      "@angular/cli": "^19.0.5",
+      "@angular/compiler": "^19.0.5",
+      "@angular/compiler-cli": "^19.0.5",
+      "ng-packagr": "^19.0.1",
+      "typescript": "~5.5.4"
     }
-}
+  }
+  

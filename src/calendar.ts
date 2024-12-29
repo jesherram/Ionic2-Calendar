@@ -12,7 +12,8 @@ SwiperCore.use([IonicSlides]);
     selector: 'calendar',
     templateUrl: './calendar.html',
     styleUrls: ['./calendar.css'],
-    providers: [CalendarService]
+    providers: [CalendarService],
+    standalone: false
 })
 export class CalendarComponent implements OnInit {
     @Input()
