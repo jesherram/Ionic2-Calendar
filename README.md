@@ -1,8 +1,10 @@
 # Ionic-Calendar directive
 
-Ionic calendar directive
-
-[![version](https://img.shields.io/npm/v/ionic2-calendar/latest.svg)](https://www.npmjs.com/package/ionic2-calendar)
+Ionic calendar directive  
+ionic2-calendar 
+[![version](https://img.shields.io/npm/v/ionic2-calendar/latest.svg)](https://www.npmjs.com/package/ionic2-calendar)  
+ionic8-calendar
+[![version](https://img.shields.io/npm/v/ionic8-calendar/latest.svg)](https://www.npmjs.com/package/ionic8-calendar)  
 [![GitHub License](https://img.shields.io/npm/l/ionic2-calendar.svg)](https://raw.githubusercontent.com/twinssbc/Ionic2-Calendar/master/LICENSE)
 
 # Table of Contents
@@ -29,6 +31,7 @@ https://stackblitz.com/edit/ionic-calendar-demo?file=pages%2Fhome%2Fhome.html
 # Dependency
 | Calendar Version | Ionic Version | Angular Version | Swiper Version |
 | ------------- | ------------- | ------------- | ------------- |
+| 2.7.x | >=8.0.0 | >=20.0.0 | >=11.0.0 |
 | 2.6.x | >=8.0.0 | >=19.0.0 | >=11.0.0 |
 | 2.5.x | >=8.0.0 | >=18.0.0 | >=11.0.0 |
 | 2.4.x | >=7.0.0 | >=17.0.0 | >=11.0.0 |
@@ -56,9 +59,9 @@ intl 1.2.5, due to issue https://github.com/angular/angular/issues/3333
 ### version 1.0.x onwards  
 version 1.0.x is also published as Ionic6-Calendar package name. So could also run  
 `npm install ionic6-calendar --save`  
-version 2.0.x is also published as Ionic7-Calendar package name. So could also run  
+version 2.0.+ is also published as Ionic7-Calendar package name. So could also run  
 `npm install ionic7-calendar --save`  
-version 2.5.x is also published as Ionic8-Calendar package name. So could also run  
+version 2.5.+ is also published as Ionic8-Calendar package name. So could also run  
 `npm install ionic8-calendar --save`  
 
 <font color=red>**NOTE: Starting from Version 1.0.x, the underlying implementaion is based on Swiper instead of IonSlides, so also needs to install Swiper dependency.**</font>  
