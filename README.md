@@ -1,8 +1,8 @@
 # Ionic-Calendar directive
 
 Ionic calendar directive  
-ionic2-calendar 
-[![version](https://img.shields.io/npm/v/ionic2-calendar/latest.svg)](https://www.npmjs.com/package/ionic2-calendar)  
+@jesherram/ionic2-calendar  
+[![version](https://img.shields.io/npm/v/%40jesherram%2Fionic2-calendar/latest.svg)](https://www.npmjs.com/package/@jesherram/ionic2-calendar)  
 ionic8-calendar
 [![version](https://img.shields.io/npm/v/ionic8-calendar/latest.svg)](https://www.npmjs.com/package/ionic8-calendar)  
 [![GitHub License](https://img.shields.io/npm/l/ionic2-calendar.svg)](https://raw.githubusercontent.com/twinssbc/Ionic2-Calendar/master/LICENSE)
@@ -57,7 +57,11 @@ intl 1.2.5, due to issue https://github.com/angular/angular/issues/3333
 # Usage
 
 ## 1. Install Calendar Dependency  
-`npm install ionic2-calendar --save`
+`npm install @jesherram/ionic2-calendar --save`
+
+If you need the legacy npm name published by the original maintainer, install `ionic2-calendar`. Both packages expose the same API, but `@jesherram/ionic2-calendar` is this fork with Angular 21 support.
+
+> **Note:** Throughout this README the snippets still reference `ionic2-calendar`. When consuming this fork, replace those import paths with `@jesherram/ionic2-calendar`.
 
 ### version 1.0.x onwards  
 version 1.0.x is also published as Ionic6-Calendar package name. So could also run  
