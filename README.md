@@ -54,6 +54,12 @@ intl 1.2.5, due to issue https://github.com/angular/angular/issues/3333
 
 **Angular 21 note:** starting with `2.8.x` you need Angular CLI/Framework 21+, TypeScript `5.9.x`, and a `bundler` `moduleResolution` in `tsconfig.json`. Install `rimraf` (already listed in devDependencies) to keep the build scripts cross-platform.
 
+## Maintainer publish flow
+1. `npm run build`
+2. `npm publish ./dist --access public`
+3. Tag the release (`git tag vX.Y.Z && git push origin vX.Y.Z`)
+
+
 # Usage
 
 ## 1. Install Calendar Dependency  
