@@ -113,8 +113,9 @@ export interface IMonthViewDisplayEventTemplateContext {
 }
 
 export interface IMonthViewEventDetailTemplateContext {
-    selectedDate: ITimeSelected;
-    noEventsLabel: string;
+    showEventDetail: boolean;
+    selectedDate?: IMonthViewRow;
+    noEventsLabel?: string;
 }
 
 export interface IWeekViewAllDayEventSectionTemplateContext {

@@ -18,7 +18,7 @@ import {DatePipe} from '@angular/common';
 import {Swiper} from 'swiper';
 import {SwiperOptions} from 'swiper/types';
 
-import {ICalendarComponent, IEvent, IMonthView, IMonthViewRow, ITimeSelected, IRange, CalendarMode, IDateFormatter, IMonthViewDisplayEventTemplateContext} from './calendar.interface';
+import {ICalendarComponent, IEvent, IMonthView, IMonthViewRow, ITimeSelected, IRange, CalendarMode, IDateFormatter, IMonthViewDisplayEventTemplateContext, IMonthViewEventDetailTemplateContext} from './calendar.interface';
 import {CalendarService} from './calendar.service';
 
 @Component({
@@ -37,14 +37,14 @@ export class MonthViewComponent implements ICalendarComponent, OnInit, OnDestroy
 
     @Input() monthviewDisplayEventTemplate!: TemplateRef<IMonthViewDisplayEventTemplateContext>;
     @Input() monthviewInactiveDisplayEventTemplate!: TemplateRef<IMonthViewDisplayEventTemplateContext>;
-    @Input() monthviewEventDetailTemplate!: TemplateRef<IMonthViewDisplayEventTemplateContext>;
+    @Input() monthviewEventDetailTemplate!: TemplateRef<IMonthViewEventDetailTemplateContext>;
 
     @Input() formatDay?: string;
     @Input() formatDayHeader?: string;
     @Input() formatMonthTitle?: string;
     @Input() eventSource!: IEvent[];
     @Input() startingDayMonth!: number;
-    @Input() showEventDetail?: boolean;
+    @Input() showEventDetail = true;
     @Input() noEventsLabel?: string;
     @Input() autoSelect = true;
     @Input() markDisabled?: (date: Date) => boolean;
