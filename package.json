@@ -16,7 +16,8 @@
     },
     "scripts": {
         "build": "rimraf dist && ng build",
-        "build-win": "rimraf dist && ng build"
+        "build-win": "rimraf dist && ng build",
+        "prepare": "npm run build"
     },
     "dependencies": {
         "tslib": "^2.6.2"
