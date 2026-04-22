@@ -1,6 +1,6 @@
 {
     "name": "@jesushr0013/ionic2-calendar",
-    "version": "3.0.1",
+    "version": "3.0.2",
     "description": "Ionic calendar component",
     "main": "fesm2022/jesushr0013-ionic2-calendar.mjs",
     "module": "fesm2022/jesushr0013-ionic2-calendar.mjs",
@@ -31,11 +31,10 @@
         "tslib": "^2.6.2"
     },
     "peerDependencies": {
-        "@angular/common": "^21.0.0",
-        "@angular/forms": "^21.0.0",
-        "@angular/core": "^21.0.0",
-        "@ionic/angular": "^8.2.0",
-        "swiper": "^11.0.0"
+        "@angular/common": ">=17.0.0",
+        "@angular/core": ">=17.0.0",
+        "@ionic/angular": ">=7.0.0",
+        "swiper": ">=9.0.0"
     },
     "devDependencies": {
         "@angular-devkit/build-angular": "^21.0.0",
