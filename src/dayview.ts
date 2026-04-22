@@ -1,4 +1,4 @@
-import { DatePipe } from '@angular/common';
+import { DatePipe, NgFor, NgIf, NgClass, NgStyle, NgTemplateOutlet } from '@angular/common';
 import {
     AfterViewInit,
     Component,
@@ -36,13 +36,16 @@ import {
     ITimeSelected
 } from './calendar.interface';
 import { CalendarService } from './calendar.service';
+import { initPositionScrollComponent } from './init-position-scroll';
+import { MonthViewComponent } from './monthview';
 
 @Component({
     selector: 'dayview',
+    standalone: true,
     templateUrl: './dayview.html',
     styleUrls: ['./dayview.css'],
     encapsulation: ViewEncapsulation.None,
-    standalone: false
+    imports: [NgFor, NgIf, NgClass, NgStyle, NgTemplateOutlet, initPositionScrollComponent, MonthViewComponent]
 })
 export class DayViewComponent implements ICalendarComponent, OnInit, OnChanges, OnDestroy, AfterViewInit {
     constructor(private calendarService: CalendarService, private elm: ElementRef, private zone: NgZone) {}

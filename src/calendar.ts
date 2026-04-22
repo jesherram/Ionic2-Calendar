@@ -2,18 +2,23 @@ import { Component, EventEmitter, Input, OnInit, Output, TemplateRef, Inject, LO
 import { Subscription } from 'rxjs';
 import { CalendarService } from './calendar.service';
 import SwiperCore from 'swiper';
-import { IonicSlides } from '@ionic/angular';
+import { IonicSlides, IonList, IonItem } from '@ionic/angular/standalone';
 import { IEvent, CalendarMode, QueryMode, Step, IMonthViewDisplayEventTemplateContext, IMonthViewEventDetailTemplateContext, IDisplayWeekViewHeader, IDisplayAllDayEvent, IDisplayEvent, IWeekViewAllDayEventSectionTemplateContext, IDayViewAllDayEventSectionTemplateContext, IWeekViewNormalEventSectionTemplateContext, IDayViewNormalEventSectionTemplateContext, IDateFormatter, IRange, ITimeSelected, IDayViewCategoryItemTemplateContext } from './calendar.interface';
+import { NgIf, NgFor, NgClass, NgStyle, NgTemplateOutlet, NgSwitch, NgSwitchCase, DatePipe } from '@angular/common';
+import { MonthViewComponent } from './monthview';
+import { WeekViewComponent } from './weekview';
+import { DayViewComponent } from './dayview';
 
 SwiperCore.use([IonicSlides]);
 
 
 @Component({
     selector: 'calendar',
+    standalone: true,
     templateUrl: './calendar.html',
     styleUrls: ['./calendar.css'],
     providers: [CalendarService],
-    standalone: false
+    imports: [NgIf, IonList, IonItem, NgFor, NgClass, NgStyle, NgTemplateOutlet, NgSwitch, NgSwitchCase, MonthViewComponent, WeekViewComponent, DayViewComponent, DatePipe]
 })
 export class CalendarComponent implements OnInit {
     @Input()

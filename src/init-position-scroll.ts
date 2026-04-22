@@ -26,7 +26,7 @@ import {
         }        
     `],
     encapsulation: ViewEncapsulation.None,
-    standalone: false
+    standalone: true
 })
 export class initPositionScrollComponent implements OnChanges, AfterViewInit, OnDestroy {
     @Input() initPosition!:number;

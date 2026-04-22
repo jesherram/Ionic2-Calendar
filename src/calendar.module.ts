@@ -1,17 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
-import { MonthViewComponent } from './monthview';
-import { WeekViewComponent } from './weekview';
-import { DayViewComponent } from './dayview';
 import { CalendarComponent } from './calendar';
-import { initPositionScrollComponent } from './init-position-scroll';
 
+/**
+ * NgModule wrapper for backward compatibility.
+ * Standalone components can be re-exported from NgModules.
+ *
+ * Legacy NgModule usage:
+ *   import { CalendarModule } from '@jesushr0013/ionic2-calendar';
+ *   @NgModule({ imports: [CalendarModule] }) export class AppModule {}
+ */
 @NgModule({
-    declarations: [
-        MonthViewComponent, WeekViewComponent, DayViewComponent, CalendarComponent, initPositionScrollComponent
-    ],
-    imports: [IonicModule, CommonModule],
+    imports: [CommonModule, CalendarComponent],
     exports: [CalendarComponent]
 })
-export class NgCalendarModule {}
+export class CalendarModule {}
+
+/**
+ * Alias for backward compatibility with legacy import:
+ *   import { NgCalendarModule } from '@jesushr0013/ionic2-calendar';
+ */
+export const NgCalendarModule = CalendarModule;

@@ -1,4 +1,4 @@
-import {DatePipe} from '@angular/common';
+import { DatePipe, NgFor, NgClass, NgTemplateOutlet, NgIf } from '@angular/common';
 import {
     Component,
     OnInit,
@@ -37,13 +37,16 @@ import type {
     IWeekViewNormalEventSectionTemplateContext
 } from './calendar.interface';
 import {CalendarService} from './calendar.service';
+import { initPositionScrollComponent } from './init-position-scroll';
+import { MonthViewComponent } from './monthview';
 
 @Component({
     selector: 'weekview',
+    standalone: true,
     templateUrl: './weekview.html',
     styleUrls: ['./weekview.css'],
     encapsulation: ViewEncapsulation.None,
-    standalone: false
+    imports: [NgFor, NgClass, NgTemplateOutlet, NgIf, initPositionScrollComponent, MonthViewComponent]
 })
 export class WeekViewComponent implements ICalendarComponent, OnInit, OnChanges, OnDestroy, AfterViewInit {
 

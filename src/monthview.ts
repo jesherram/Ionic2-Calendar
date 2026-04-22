@@ -14,7 +14,7 @@ import {
     ElementRef
 } from '@angular/core';
 import {Subscription} from 'rxjs';
-import {DatePipe} from '@angular/common';
+import { DatePipe, NgIf, NgFor, NgClass, NgTemplateOutlet } from '@angular/common';
 import {Swiper} from 'swiper';
 import {SwiperOptions} from 'swiper/types';
 
@@ -23,9 +23,15 @@ import {CalendarService} from './calendar.service';
 
 @Component({
     selector: 'monthview',
+    standalone: true,
     templateUrl: './monthview.html',
     styleUrls: ['./monthview.css'],
-    standalone: false,
+    imports: [
+        NgIf,
+        NgFor,
+        NgClass,
+        NgTemplateOutlet,
+    ],
 })
 export class MonthViewComponent implements ICalendarComponent, OnInit, OnDestroy, OnChanges, AfterViewInit {
 
