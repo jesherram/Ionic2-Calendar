@@ -20,7 +20,12 @@
     },
     "scripts": {
         "build": "rimraf dist && ng build",
-        "build-win": "rimraf dist && ng build"
+        "build-win": "rimraf dist && ng build",
+        "prepublishOnly": "npm run build"
+    },
+    "publishConfig": {
+        "directory": "dist",
+        "access": "public"
     },
     "dependencies": {
         "tslib": "^2.6.2"
