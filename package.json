@@ -1,6 +1,6 @@
 {
     "name": "@jesushr0013/ionic2-calendar",
-    "version": "3.0.2",
+    "version": "3.0.3",
     "description": "Ionic calendar component",
     "main": "fesm2022/jesushr0013-ionic2-calendar.mjs",
     "module": "fesm2022/jesushr0013-ionic2-calendar.mjs",

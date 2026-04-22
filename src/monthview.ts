@@ -118,7 +118,7 @@ export class MonthViewComponent implements ICalendarComponent, OnInit, OnDestroy
         if (this.dateFormatter && this.dateFormatter.formatMonthViewDayHeader) {
             this.formatDayHeaderLabel = this.dateFormatter.formatMonthViewDayHeader;
         } else {
-            const datePipe = new DatePipe(this.locale);
+            const datePipe = new DatePipe(this.locale || 'en-US');
             this.formatDayHeaderLabel = function(date: Date) {
                 return datePipe.transform(date, this.formatDayHeader)||'';
             };
@@ -127,7 +127,7 @@ export class MonthViewComponent implements ICalendarComponent, OnInit, OnDestroy
         if (this.dateFormatter && this.dateFormatter.formatMonthViewTitle) {
             this.formatTitle = this.dateFormatter.formatMonthViewTitle;
         } else {
-            const datePipe = new DatePipe(this.locale);
+            const datePipe = new DatePipe(this.locale || 'en-US');
             this.formatTitle = function(date: Date) {
                 return datePipe.transform(date, this.formatMonthTitle)||'';
             };

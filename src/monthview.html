@@ -1,7 +1,7 @@
 <div class="swiper monthview-swiper" #monthViewSwiper>
     <div class="swiper-wrapper">
         <div class="swiper-slide">
-            <table *ngIf="0===currentViewIndex" class="table table-bordered table-fixed monthview-datetable">
+            <table *ngIf="views[0] && 0===currentViewIndex" class="table table-bordered table-fixed monthview-datetable">
                 <thead>
                     <tr>
                         <th *ngFor="let dayHeader of views[0].dayHeaders">
@@ -20,7 +20,7 @@
                     </tr>
                 </tbody>
             </table>
-            <table *ngIf="0!==currentViewIndex" class="table table-bordered table-fixed monthview-datetable">
+            <table *ngIf="views[0] && 0!==currentViewIndex" class="table table-bordered table-fixed monthview-datetable">
                 <thead>
                     <tr class="text-center">
                         <th *ngFor="let dayHeader of views[0].dayHeaders">
@@ -40,7 +40,7 @@
             </table>
         </div>
         <div class="swiper-slide">
-            <table *ngIf="1===currentViewIndex" class="table table-bordered table-fixed monthview-datetable">
+            <table *ngIf="views[1] && 1===currentViewIndex" class="table table-bordered table-fixed monthview-datetable">
                 <thead>
                     <tr>
                         <th *ngFor="let dayHeader of views[1].dayHeaders">
@@ -59,7 +59,7 @@
                     </tr>
                 </tbody>
             </table>
-            <table *ngIf="1!==currentViewIndex" class="table table-bordered table-fixed monthview-datetable">
+            <table *ngIf="views[1] && 1!==currentViewIndex" class="table table-bordered table-fixed monthview-datetable">
                 <thead>
                     <tr class="text-center">
                         <th *ngFor="let dayHeader of views[1].dayHeaders">
@@ -79,7 +79,7 @@
             </table>
         </div>
         <div class="swiper-slide">
-            <table *ngIf="2===currentViewIndex" class="table table-bordered table-fixed monthview-datetable">
+            <table *ngIf="views[2] && 2===currentViewIndex" class="table table-bordered table-fixed monthview-datetable">
                 <thead>
                     <tr>
                         <th *ngFor="let dayHeader of views[2].dayHeaders">
@@ -98,7 +98,7 @@
                     </tr>
                 </tbody>
             </table>
-            <table *ngIf="2!==currentViewIndex" class="table table-bordered table-fixed monthview-datetable">
+            <table *ngIf="views[2] && 2!==currentViewIndex" class="table table-bordered table-fixed monthview-datetable">
                 <thead>
                     <tr class="text-center">
                         <th *ngFor="let dayHeader of views[2].dayHeaders">
