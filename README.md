@@ -1,22 +1,23 @@
 # Ionic-Calendar directive
 
-Ionic calendar directive  
-@jesushr0013/ionic2-calendar  
+Ionic calendar component for **Angular 17+ and Ionic 8**, with full **standalone component** support (no AppModule required).
+
+`@jesushr0013/ionic2-calendar`  
 [![version](https://img.shields.io/npm/v/%40jesushr0013%2Fionic2-calendar/latest.svg)](https://www.npmjs.com/package/@jesushr0013/ionic2-calendar)  
-ionic8-calendar
-[![version](https://img.shields.io/npm/v/ionic8-calendar/latest.svg)](https://www.npmjs.com/package/ionic8-calendar)  
-[![GitHub License](https://img.shields.io/npm/l/ionic2-calendar.svg)](https://raw.githubusercontent.com/twinssbc/Ionic2-Calendar/master/LICENSE)
+[![GitHub License](https://img.shields.io/npm/l/ionic2-calendar.svg)](https://raw.githubusercontent.com/jesherram/Ionic2-Calendar/main/LICENSE)
 
 # Table of Contents
-1. [Demo](#demo)  
+1. [Demo](#demo)
 2. [Dependency](#dependency)
 3. [Usage](#usage)
-4. [Options](#options)
-5. [Callback](#callback)
-6. [View Customization Option](#view-customization-option)
-7. [EventSource](#eventsource)
-8. [Performance Tuning](#performance-tuning)
-9. [Common Questions](#common-questions)
+4. [Standalone Usage (Angular 17+)](#standalone-usage-angular-17)
+5. [NgModule Usage (Legacy)](#ngmodule-usage-legacy)
+6. [Options](#options)
+7. [Callback](#callback)
+8. [View Customization Option](#view-customization-option)
+9. [EventSource](#eventsource)
+10. [Performance Tuning](#performance-tuning)
+11. [Common Questions](#common-questions)
 
 # Demo
 Version 2.0    
@@ -24,150 +25,164 @@ https://stackblitz.com/edit/ionic-calendar-demo-2-2?file=src%2Fapp%2Fexample.com
 Version 1.0    
 https://stackblitz.com/edit/ionic-calendar-demo-1-0?file=src%2Fapp%2Fexample.component.html    
 Version 0.x    
-https://stackblitz.com/edit/ionic-calendar-demo?file=pages%2Fhome%2Fhome.html   
+https://stackblitz.com/edit/ionic-calendar-demo?file=pages%2Fhome%2Fhome.html
 
 
 
 # Dependency
-| Calendar Version | Ionic Version | Angular Version | Swiper Version |
-| ------------- | ------------- | ------------- | ------------- |
-| 2.8.x | >=8.0.0 | >=21.0.0 | >=11.0.0 |
-| 2.7.x | >=8.0.0 | >=20.0.0 | >=11.0.0 |
-| 2.6.x | >=8.0.0 | >=19.0.0 | >=11.0.0 |
-| 2.5.x | >=8.0.0 | >=18.0.0 | >=11.0.0 |
-| 2.4.x | >=7.0.0 | >=17.0.0 | >=11.0.0 |
-| 2.3.x | >=7.0.0 | >=17.0.0 | >=11.0.0 |
-| 2.2.x | >=7.0.0 | >=1s7.0.0 | >=10.1.0 |
-| 2.1.x | >=7.0.0 | >=16.0.0 | >=10.1.0 |
-| 2.0.x | >=7.0.0 | >=16.0.0 | [8.4.6, 9.0.0) |
-| 1.0.x | >=6.1.9 | >=15.1.2 | [8.4.6, 9.0.0) |
-| 0.6.x | >=5.1.0 | >=9.1.0 | |
-| 0.5.x | >=4.0.0-rc.1 | | |
-| 0.4.x | >=3.9.2 | | |
-| 0.3.x | >=3.1.1 | | |
-| 0.2.9+ | >=2.3.0 | | |
-| 0.2.x | 2.0.0-rc.5 | | |
-| 0.1.x | [2.0.0-rc.1, 2.0.0-rc.4] | | |
-
-version 0.2-0.4 has below dependency:      
-intl 1.2.5, due to issue https://github.com/angular/angular/issues/3333    
-
-**Angular 21 note:** starting with `2.8.x` you need Angular CLI/Framework 21+, TypeScript `5.9.x`, and a `bundler` `moduleResolution` in `tsconfig.json`. Install `rimraf` (already listed in devDependencies) to keep the build scripts cross-platform.
+| Calendar Version | Ionic Version | Angular Version | Swiper Version | Architecture |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| **3.0.x** | >=8.0.0 | >=17.0.0 | >=11.0.0 | **Standalone** ✅ |
+| 2.8.x | >=8.0.0 | >=21.0.0 | >=11.0.0 | NgModule |
+| 2.7.x | >=8.0.0 | >=20.0.0 | >=11.0.0 | NgModule |
+| 2.6.x | >=8.0.0 | >=19.0.0 | >=11.0.0 | NgModule |
+| 2.5.x | >=8.0.0 | >=18.0.0 | >=11.0.0 | NgModule |
+| 2.4.x | >=7.0.0 | >=17.0.0 | >=11.0.0 | NgModule |
+| 2.3.x | >=7.0.0 | >=17.0.0 | >=11.0.0 | NgModule |
+| 2.2.x | >=7.0.0 | >=17.0.0 | >=10.1.0 | NgModule |
+| 2.1.x | >=7.0.0 | >=16.0.0 | >=10.1.0 | NgModule |
+| 2.0.x | >=7.0.0 | >=16.0.0 | [8.4.6, 9.0.0) | NgModule |
+| 1.0.x | >=6.1.9 | >=15.1.2 | [8.4.6, 9.0.0) | NgModule |
+| 0.6.x | >=5.1.0 | >=9.1.0 | | NgModule |
+| 0.5.x | >=4.0.0-rc.1 | | | NgModule |
 
 ## Maintainer publish flow
 1. `npm run build`
-2. `npm publish ./dist --access public`
-3. Tag the release (`git tag vX.Y.Z && git push origin vX.Y.Z`)
+2. `cd dist && npm publish --access public`
+3. Tag the release: `git tag vX.Y.Z && git push origin vX.Y.Z`
 
 
 # Usage
 
-## 1. Install Calendar Dependency  
-`npm install @jesushr0013/ionic2-calendar --save`
+## 1. Install
 
-If you need the legacy npm name published by the original maintainer, install `ionic2-calendar`. Both packages expose the same API, but `@jesushr0013/ionic2-calendar` is this fork with Angular 21 support.
-
-> **Note:** Throughout this README the snippets still reference `ionic2-calendar`. When consuming this fork, replace those import paths with `@jesushr0013/ionic2-calendar`.
-
-### version 1.0.x onwards  
-version 1.0.x is also published as Ionic6-Calendar package name. So could also run  
-`npm install ionic6-calendar --save`  
-version 2.0.+ is also published as Ionic7-Calendar package name. So could also run  
-`npm install ionic7-calendar --save`  
-version 2.5.+ is also published as Ionic8-Calendar package name. So could also run  
-`npm install ionic8-calendar --save`  
-
-<font color=red>**NOTE: Starting from Version 1.0.x, the underlying implementaion is based on Swiper instead of IonSlides, so also needs to install Swiper dependency.**</font>  
-- Install swiper dependency  
-`npm install swiper --save`
-
-- Import swiper css in **global.scss**  
+```bash
+npm install @jesushr0013/ionic2-calendar --save
+npm install swiper --save
 ```
+
+Import Swiper CSS in **global.scss**:
+```scss
 @import 'swiper/css';
 ```
 
-## 2. Import the Calendar module
-If using version 1.0.x, could use both ionic2-calendar or ionic6-calendar, ionic7-calendar.
+---
 
-- version 0.5.x onwards
-``` typescript
-import { NgModule } from '@angular/core';
-import { IonicApp, IonicModule } from '@ionic/angular';
-import { MyApp } from './app/app.component';
-import { NgCalendarModule  } from 'ionic2-calendar';
+# Standalone Usage (Angular 17+)
 
-@NgModule({
-    declarations: [
-        MyApp
-    ],
-    imports: [
-        NgCalendarModule,
-        IonicModule.forRoot(MyApp)
-    ],
-    bootstrap: [IonicApp],
-    entryComponents: [
-        MyApp
-    ]
+The recommended way for Angular 17+ / Ionic 8 standalone projects (no AppModule needed).
+
+## Import directly in your component
+
+```typescript
+import { Component } from '@angular/core';
+import { CalendarComponent, IEvent, CalendarMode } from '@jesushr0013/ionic2-calendar';
+
+@Component({
+  selector: 'app-my-page',
+  standalone: true,
+  imports: [CalendarComponent],
+  template: `
+    <calendar
+      [eventSource]="events"
+      [calendarMode]="mode"
+      [currentDate]="today"
+      (onCurrentDateChanged)="onCurrentDateChanged($event)"
+      (onRangeChanged)="onRangeChanged($event)"
+      (onEventSelected)="onEventSelected($event)"
+      (onTimeSelected)="onTimeSelected($event)"
+      (onTitleChanged)="onViewTitleChanged($event)"
+      [step]="30">
+    </calendar>
+  `
 })
-export class AppModule {}
+export class MyPage {
+  events: IEvent[] = [];
+  mode: CalendarMode = 'month';
+  today = new Date();
+
+  onCurrentDateChanged(date: Date) {}
+  onRangeChanged(range: { startTime: Date; endTime: Date }) {}
+  onEventSelected(event: IEvent) { console.log(event.title); }
+  onTimeSelected(ev: { selectedTime: Date; events: IEvent[]; disabled: boolean }) {}
+  onViewTitleChanged(title: string) {}
+}
 ```
 
-- version 0.1.x - 0.4.x
-``` typescript
+That's all. No module imports, no providers, no `forRoot()`.
+
+---
+
+# NgModule Usage (Legacy)
+
+For projects that still use NgModule / AppModule.
+
+## Import CalendarModule
+
+```typescript
 import { NgModule } from '@angular/core';
-import { IonicApp, IonicModule } from 'ionic-angular';
-import { MyApp } from './app/app.component';
-import { NgCalendarModule  } from 'ionic2-calendar';
+import { CalendarModule } from '@jesushr0013/ionic2-calendar'; // or NgCalendarModule
 
 @NgModule({
-    declarations: [
-        MyApp
-    ],
-    imports: [
-        NgCalendarModule,
-        IonicModule.forRoot(MyApp)
-    ],
-    bootstrap: [IonicApp],
-    entryComponents: [
-        MyApp
-    ]
-})
-export class AppModule {}
-```
-
-If you are using PageModule, you need to import the NgCalendarModule in your page module
-
-``` typescript
-import { NgCalendarModule  } from 'ionic2-calendar';
-
-@NgModule({
-  declarations: [
-    MyPage
-  ],
   imports: [
-    IonicPageModule.forChild(MyPage),
-    NgCalendarModule
-  ],
-  entryComponents: [
-    MyPage
+    CalendarModule
+  ]
+})
+export class AppModule {}
+```
+
+For page modules:
+```typescript
+import { NgModule } from '@angular/core';
+import { CalendarModule } from '@jesushr0013/ionic2-calendar';
+
+@NgModule({
+  declarations: [MyPage],
+  imports: [
+    CalendarModule
   ]
 })
 export class MyPageModule {}
 ```
 
-## 3. Add the directive in the html page
+## Template (same for both approaches)
 
-``` html
-    <calendar [eventSource]="eventSource"
-        [calendarMode]="calendar.mode"
-        [currentDate]="calendar.currentDate"
-        (onCurrentDateChanged)="onCurrentDateChanged($event)"
-        (onRangeChanged)="reloadSource(startTime, endTime)"
-        (onEventSelected)="onEventSelected($event)"
-        (onTitleChanged)="onViewTitleChanged($event)"
-        (onTimeSelected)="onTimeSelected($event)"
-        [step]="calendar.step">        
-    </calendar>
+```html
+<calendar
+  [eventSource]="eventSource"
+  [calendarMode]="calendar.mode"
+  [currentDate]="calendar.currentDate"
+  (onCurrentDateChanged)="onCurrentDateChanged($event)"
+  (onRangeChanged)="reloadSource(startTime, endTime)"
+  (onEventSelected)="onEventSelected($event)"
+  (onTitleChanged)="onViewTitleChanged($event)"
+  (onTimeSelected)="onTimeSelected($event)"
+  [step]="calendar.step">
+</calendar>
+```
+
+---
+
+## Available exports from `@jesushr0013/ionic2-calendar`
+
+```typescript
+// Component
+import { CalendarComponent } from '@jesushr0013/ionic2-calendar';
+
+// NgModule (legacy)
+import { CalendarModule, NgCalendarModule } from '@jesushr0013/ionic2-calendar';
+
+// Enums & types
+import { CalendarMode, QueryMode, Step } from '@jesushr0013/ionic2-calendar';
+
+// Interfaces
+import {
+  IEvent, IRange, ITimeSelected, IDateFormatter, ICalendarComponent,
+  IMonthViewDisplayEventTemplateContext, IMonthViewEventDetailTemplateContext,
+  IWeekViewAllDayEventSectionTemplateContext, IWeekViewNormalEventSectionTemplateContext,
+  IDayViewAllDayEventSectionTemplateContext, IDayViewNormalEventSectionTemplateContext,
+  IDayViewCategoryItemTemplateContext
+} from '@jesushr0013/ionic2-calendar';
 ```
 
 
@@ -204,7 +219,7 @@ Default value: 'month'
 
 Version 1.0.x onwards
 ```typescript
-    import { CalendarMode } from 'ionic2-calendar';
+    import { CalendarMode } from '@jesushr0013/ionic2-calendar';
 
     calendar = {
         mode: 'week' as CalendarMode
@@ -252,7 +267,7 @@ Default value: 60
 ```
 
 ```typescript
-    import { Step } from 'ionic2-calendar/calendar';
+    import { Step } from '@jesushr0013/ionic2-calendar';
 
     calendar = {
         step: 30 as Step
@@ -874,7 +889,7 @@ Indicates which category the event belongs to. If the value is specified but not
 When this method is called, the calendar will be forced to reload the events in the eventSource array. This is only necessary when you directly modify the element in the eventSource array.
 
 ``` typescript
-import { CalendarComponent } from "ionic2-calendar";
+import { CalendarComponent } from "@jesushr0013/ionic2-calendar";
 
 @Component({
     selector: 'page-home',
@@ -900,7 +915,7 @@ export class HomePage {
 Slide the calendar to the next date range.
 
 ``` typescript
-import { CalendarComponent } from "ionic2-calendar";
+import { CalendarComponent } from "@jesushr0013/ionic2-calendar";
 
 @Component({
     selector: 'page-home',
@@ -919,7 +934,7 @@ export class HomePage {
 Slide the calendar to the previous date range.
 
 ``` typescript
-import { CalendarComponent } from "ionic2-calendar";
+import { CalendarComponent } from "@jesushr0013/ionic2-calendar";
 
 @Component({
     selector: 'page-home',
@@ -938,7 +953,7 @@ export class HomePage {
 Update the underlying slides.
 
 ``` typescript
-import { CalendarComponent } from "ionic2-calendar";
+import { CalendarComponent } from "@jesushr0013/ionic2-calendar";
 
 @Component({
     selector: 'page-home',
@@ -956,9 +971,22 @@ export class HomePage {
 # Localization    
 You could use *locale* option to achieve the localization.  
 If locale option is not specified, the calendar will use the LOCALE_ID set at the module level.  
-By default, the LOCALE_ID is **en-US**. You can override it in the module as below. If you pass **undefined**, the LOCALE_ID will be detected using the browser language setting. But using explicit value is recommended, as browser has different level of localization support.    
-Note that the event detail section in the month view doesn't support *locale* option, only LOCALE_ID takes effect. This is because it uses DatePipe in html directly. You could easily leverage customized event detail template to switch to other locale. 
+By default, the LOCALE_ID is **en-US**. You can override it as below. If you pass **undefined**, the LOCALE_ID will be detected using the browser language setting.
 
+**Standalone app (bootstrapApplication):**
+``` typescript
+import { LOCALE_ID } from '@angular/core';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { AppComponent } from './app/app.component';
+
+bootstrapApplication(AppComponent, {
+  providers: [
+    { provide: LOCALE_ID, useValue: 'zh-CN' }
+  ]
+});
+```
+
+**NgModule app:**
 ``` typescript
 import { NgModule, LOCALE_ID } from '@angular/core';
 
