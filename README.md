@@ -1053,3 +1053,54 @@ Answer: By default, the css applied on each component is view encapsulated, for 
     border: 1px solid #ddd !important;
 }
 ```
+
+* Error: `NG02100` + `TypeError: Cannot read properties of undefined (reading 'dates')`  
+Answer: Both errors share a single root cause — **the locale you passed (e.g. `es-ES`) is not registered in Angular**.
+
+  * `NG02100` — the internal `DatePipe` fails because Angular has no data for that locale.  
+  * `TypeError: Cannot read properties of undefined (reading 'dates')` — the pipe failure leaves the calendar view in an invalid state (`this.views[n]` is `undefined`).
+
+  **Fix: register the locale before bootstrap in `main.ts`**
+
+  ```typescript
+  import { registerLocaleData } from '@angular/common';
+  import localeEs from '@angular/common/locales/es';
+  registerLocaleData(localeEs);
+  ```
+
+  Then provide `LOCALE_ID` in the bootstrap so `DatePipe` picks it up by default:
+
+  **Standalone app (`bootstrapApplication`):**
+  ```typescript
+  import { LOCALE_ID } from '@angular/core';
+  import { bootstrapApplication } from '@angular/platform-browser';
+  import { AppComponent } from './app/app.component';
+  import { registerLocaleData } from '@angular/common';
+  import localeEs from '@angular/common/locales/es';
+
+  registerLocaleData(localeEs);
+
+  bootstrapApplication(AppComponent, {
+    providers: [
+      { provide: LOCALE_ID, useValue: 'es-ES' }
+    ]
+  });
+  ```
+
+  **NgModule app:**
+  ```typescript
+  import { NgModule, LOCALE_ID } from '@angular/core';
+  import { registerLocaleData } from '@angular/common';
+  import localeEs from '@angular/common/locales/es';
+
+  registerLocaleData(localeEs);
+
+  @NgModule({
+    providers: [
+      { provide: LOCALE_ID, useValue: 'es-ES' }
+    ]
+  })
+  export class AppModule {}
+  ```
+
+  > **Note:** In standalone Angular apps, locale data is **never** registered automatically — you must call `registerLocaleData` explicitly for every locale you use.
